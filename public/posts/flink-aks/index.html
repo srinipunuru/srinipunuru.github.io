@@ -1,0 +1,95 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Deploying Flink on AKS | Srinivasulu Punuru</title>
+<meta name=keywords content="flink,azure,aks">
+<meta name=description content="Instructions on how to deploy Flink on AKS">
+<meta name=author content="Srinivasulu Punuru">
+<link rel=canonical href=https://srinipunuru.github.io/posts/flink-aks/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.6cba0d81b5f3f42bb578d49f402ba4175aa72b43def148780b8ad714c957c6f5.css integrity="sha256-bLoNgbXz9Cu1eNSfQCukF1qnK0Pe8Uh4C4rXFMlXxvU=" rel="preload stylesheet" as=style>
+<link rel=preload href=profile.png as=image>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://srinipunuru.github.io/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://srinipunuru.github.io/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://srinipunuru.github.io/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://srinipunuru.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://srinipunuru.github.io/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.86.1">
+<meta property="og:title" content="Deploying Flink on AKS">
+<meta property="og:description" content="Instructions on how to deploy Flink on AKS">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://srinipunuru.github.io/posts/flink-aks/"><meta property="og:image" content="https://srinipunuru.github.io/papermod-cover.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-07-01T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-07-01T00:00:00+00:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://srinipunuru.github.io/papermod-cover.png">
+<meta name=twitter:title content="Deploying Flink on AKS">
+<meta name=twitter:description content="Instructions on how to deploy Flink on AKS">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://srinipunuru.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Deploying Flink on AKS","item":"https://srinipunuru.github.io/posts/flink-aks/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Deploying Flink on AKS","name":"Deploying Flink on AKS","description":"Instructions on how to deploy Flink on AKS","keywords":["flink","azure","aks"],"articleBody":"","wordCount":"0","inLanguage":"en","datePublished":"2021-07-01T00:00:00Z","dateModified":"2021-07-01T00:00:00Z","author":{"@type":"Person","name":"Srinivasulu Punuru"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://srinipunuru.github.io/posts/flink-aks/"},"publisher":{"@type":"Organization","name":"Srinivasulu Punuru","logo":{"@type":"ImageObject","url":"https://srinipunuru.github.io/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<noscript>
+<style type=text/css>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://srinipunuru.github.io/ accesskey=h title="Srinivasulu Punuru (Alt + H)">Srinivasulu Punuru</a>
+<span class=logo-switches>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://srinipunuru.github.io/posts title=Posts>
+<span>Posts</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+Deploying Flink on AKS
+</h1>
+<div class=post-description>
+Instructions on how to deploy Flink on AKS
+</div>
+<div class=post-meta>July 1, 2021&nbsp;·&nbsp;Srinivasulu Punuru
+</div>
+</header>
+<div class=post-content>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://srinipunuru.github.io/tags/flink/>flink</a></li>
+<li><a href=https://srinipunuru.github.io/tags/azure/>azure</a></li>
+<li><a href=https://srinipunuru.github.io/tags/aks/>aks</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://srinipunuru.github.io/>Srinivasulu Punuru</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
+<button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</button>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+</body>
+</html>

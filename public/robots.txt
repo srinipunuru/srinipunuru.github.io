@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://srinipunuru.github.io/sitemap.xml

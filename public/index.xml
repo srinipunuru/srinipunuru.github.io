@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Srinivasulu Punuru</title>
+    <link>https://srinipunuru.github.io/</link>
+    <description>Recent content on Srinivasulu Punuru</description>
+    <image>
+      <url>https://srinipunuru.github.io/papermod-cover.png</url>
+      <link>https://srinipunuru.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://srinipunuru.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying Flink on AKS</title>
+      <link>https://srinipunuru.github.io/posts/flink-aks/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://srinipunuru.github.io/posts/flink-aks/</guid>
+      <description>Instructions on how to deploy Flink on AKS</description>
+    </item>
+    
+  </channel>
+</rss>
